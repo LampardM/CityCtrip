@@ -48,24 +48,24 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-@import url('../style/variable.less');
+@import '../style/variable.less';
 
 .position-box {
-  background: #f0efed;
-  padding-bottom: 10px;
+  background:#f0efed;
+  padding-bottom:10px; 
   .choose {
-    height: 40px;
-    border-top: 2px #ccc solid;
-    border-bottom: 1px #ccc solid;
+    height:40px;
+    border-top:2px #ccc solid;
+    border-bottom:1px #ccc solid;
     box-sizing: border-box;
-    line-height: 37px;
-    padding-left: 10px;
+    line-height:37px;
+    padding-left:10px;
     background: #fdfdfd;
     span {
       font-weight: 900;
     }
   }
-    
+
   .hostory {
     height: 70px;
     padding: 0px 10px;
@@ -74,64 +74,68 @@ export default {
       line-height: 30px;
       font-weight: 900;
       color: @color-text;
-      .citybox {
-        height: 40px;
+    }
+      
+    .citybox{
+      height: 40px;
+      box-sizing: border-box;
+      padding-top: 5px;
+      button{
         box-sizing: border-box;
-        padding-top: 5px;
-        button {
-          box-sizing: border-box;
-          border: 1px solid #ddd8ce;
-          border-radius: 4px;
-          outline: none;
-          width: 26%;
-          height: 30px;
-          margin: 0px 3.6%;
-          background: #fdfdfd;
-          color: @color-text;
-          float: left;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          font-weight: 900;
-          font-size: 14px;
-          .icon {
-            color: #4395ff;
-          }
+        border:1px solid #ddd8ce;
+        border-radius:4px;
+        outline:none;
+        width:26%;
+        height:30px;
+        margin:0px 3.6%;
+        background:#fdfdfd;
+        color: @color-text;
+        float:left;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight:900;
+        font-size:14px;
+        .icon {
+          color:#4395ff; 
         }
       }
     }
   }
     
   .hot {
-    height: 130px;
+    height:130px;
     padding: 0px 10px;
     box-sizing: border-box;
-    p {
+    p{
       line-height: 30px;
       font-weight: 900;
       color: @color-text;
-      .citybox {
-        height: 100px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        button {
-          box-sizing: border-box;
-          border: 1px solid #ddd8ce;
-          border-radius: 4px;
-          outline: none;
-          width: 26%;
-          height: 30px;
-          margin: 0px 3%;
-          background: #fdfdfd;
-          color: @color-text;
-          font-size: 14px;
-        }
-      }  
     }
+
+    .citybox {
+      height:100px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      button {
+        box-sizing: border-box;
+        border: 1px solid #ddd8ce;
+        border-radius: 4px;
+        outline: none;
+        width:26%;
+        height: 30px;
+        margin: 0px 3%;
+        background: #fdfdfd;
+        color: @color-text;
+        font-size:14px;
+      }
+    }
+
   }
+    
 }
-  
+ 
 </style>
