@@ -7,7 +7,7 @@
     <scroll :data="citylist" ref="suggest" :probeType="3" :listenScroll="true" @distance="distance" @scrollStore="scrollStore">
       <div>
         <position-box :chooseCity="chooseCity" :orientate="nowCity" :historyCityArr="historyCityArr" @changeCity="changeCity"></position-box>
-        <city-list :citylist="citylist" :elementIndex="elementIndex" @positionCity="changeCity" @singleLetter="singleLetter"></city-list>
+        <city-list :citylist="citylist" :elementIndex="elementIndex" :changeIndex="changeIndex" @positionCity="changeCity" @singleLetter="singleLetter"></city-list>
       </div>
     </scroll>
     <nav-list :navList="cityIndexList" @toElement="toElement" :flagText="flagText"></nav-list>
@@ -56,7 +56,8 @@ export default {
       elementIndex: '', // navlist页点击的index
       arrHeight: [], // 高度数组
       flag: false, // 字母牌是否显示
-      flagText: '历史' // 字母牌显示的字
+      flagText: '历史', // 字母牌显示的字
+      changeIndex: 0
     };
   },
   created () {
@@ -164,6 +165,7 @@ export default {
         this.$refs.suggest.scrollTo(0, 0, 200)
       }
       this.elementIndex = text
+      this.changeIndex++
       this.flagText = text
     },
     // 滚动到相应的dom节点

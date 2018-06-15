@@ -13,7 +13,8 @@ export default {
   props: {
     citylist: Array,
     cityIndexList: Array,
-    elementIndex: String
+    elementIndex: String,
+    changeIndex: Number
   },
   methods: {
     changeCity (name) {
@@ -21,11 +22,17 @@ export default {
     }
   },
   watch: {
-    elementIndex (val) {
-      if (val === '历史' || val === '热门') {
+    // elementIndex (val) {
+    //   if (val === '历史' || val === '热门') {
+    //     return false
+    //   }
+    //   this.$emit('singleLetter', this.$refs[val][0])
+    // },
+    changeIndex () {
+      if (this.elementIndex === '历史' || this.elementIndex === '热门') {
         return false
       }
-      this.$emit('singleLetter', this.$refs[val][0])
+      this.$emit('singleLetter', this.$refs[this.elementIndex][0])
     }
   }
 }
