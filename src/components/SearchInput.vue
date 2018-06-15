@@ -12,12 +12,37 @@
 <script>
 export default {
   name: 'SearchInput',
+  props: {
+    clearText: Boolean
+  },
   data () {
     return {
-    
+      searchText: '',
+      timer: {}
+    }
+  },
+  methods: {
+    // 延时搜索
+    entry () {
+      if (this.timer) {
+        clearTimeout(this.timer)
+      }
+      this.timer = setTimeout(() => {
+        this.$emit('txtdata', this.searchText)
+      }, 300)
+    }
+  },
+  watch: {
+    // 清除搜索内容
+    clearText (val) {
+      if (val) {
+        this.searchText = ''
+        this.entry()
+      }
     }
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
