@@ -11,7 +11,6 @@
       </div>
     </scroll>
     <nav-list :navList="cityIndexList" @toElement="toElement" :flagText="flagText"></nav-list>
-    <mask-box v-if="maskShow" :message="maskMessage" @chooseing="chooseResult"></mask-box>
     <transition name="flag">
       <div class="nowFlag" v-if="flag">{{flagText}}</div>
     </transition>
@@ -20,6 +19,7 @@
 
 <script>
 import SearchInput from '@/components/SearchInput'
+import SearchList from '@/components/SearchList'
 import Scroll from '@/components/Scroll'
 import CityList from '@/components/CityList'
 import CityItem from '@/components/CityItem'
@@ -33,6 +33,7 @@ export default {
   name: "Index",
   components: {
     SearchInput,
+    SearchList,
     Scroll,
     CityList,
     CityItem,
@@ -134,26 +135,16 @@ export default {
       }
       // 选择的城市的名字
       this.choiceCity = name
-      this.maskMessage = `你确定要选择${name}么？`
-      this.maskShow = true
+      this.choiceCityName = this.choiceCity
+      this.local()
+      this.associationShow = false // 关闭搜索框（在搜索状态下）
+      this.clearSearch = true // 清除输入框的字（在搜索状态下）
+      // 当确认后滚动到顶部
+      this.$refs.suggest.scrollTo(0, 0, 200)
     },
     // 关闭确认弹窗
     maskClose () {
       this.maskShow = false
-    },
-    // 是否确认切换定位
-    chooseResult (res) {
-      if (!res) {
-        this.maskClose() // 不切换，仅关闭弹窗
-      } else {
-        this.choiceCityName = this.choiceCity
-        this.local()
-        this.associationShow = false // 关闭搜索框（在搜索状态下）
-        this.clearSearch = true // 清除输入框的字（在搜索状态下）
-        // 当确认后滚动到顶部
-        this.$refs.suggest.scrollTo(0, 0, 200)
-        this.maskClose()
-      }
     },
     // 根据定位确定加缓存
     local () {
