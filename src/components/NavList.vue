@@ -1,7 +1,7 @@
 <template>
   <div class="navbody">
     <div class="navList" @touchstart.stop.prevent="start" @touchmove.stop.prevent="move">
-      <div :class="navClass(item)" :data-name="item" v-for="item in navList" :key="item">
+      <div class="flagItem" :data-name="item" v-for="item in navList" :key="item">
         {{item}}
       </div>
     </div>
@@ -55,32 +55,32 @@ export default {
 
 <style lang="less" scoped>
 .navbody{
-  width: 20px;
-  border-radius: 10px;
+  width: 30px;
+  border-radius: 2px;
   height: 480px;
   position: absolute;
-  top: 50%;
+  top: 80px;
   right: 0;
-  margin-top: -230px;
+  // margin-top: -230px;
   z-index: 95;
   box-sizing: border-box;
   padding: 10px 0px;
   .navItem{
-    width: 20px;
+    width: 30px;
     height: 20px;
     text-align: center;
     line-height: 20px;
-    font-size: 18px;
+    font-size: 13px;
     color: #666;
     user-select: none;
   }
 
   .flagItem {
-    width: 20px;
+    width: 30px;
     height: 20px;
     text-align: center;
     line-height: 20px;
-    font-size: 18px;
+    font-size: 12px;
     color: #4395FF;
     user-select: none;
   }

@@ -22,7 +22,7 @@ export default {
   },
   watch: {
     elementIndex (val) {
-      if (val === '顶') {
+      if (val === '历史' || val === '热门') {
         return false
       }
       this.$emit('singleLetter', this.$refs[val][0])

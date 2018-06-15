@@ -68,7 +68,7 @@ export default {
 
   .hostory {
     height: 70px;
-    padding: 0px 10px;
+    padding: 0px 20px;
     box-sizing: border-box;
     p {
       line-height: 30px;
@@ -105,7 +105,7 @@ export default {
     
   .hot {
     height:130px;
-    padding: 0px 10px;
+    padding: 0px 20px;
     box-sizing: border-box;
     p{
       line-height: 30px;

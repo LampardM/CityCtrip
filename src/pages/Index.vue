@@ -47,7 +47,7 @@ export default {
       choiceCityName: '', // 选择查看的城市
       historyCityArr: [], // 查看历史记录
       citylist: [], // 城市列表
-      cityIndexList: ['顶'], // 右边导航栏列表
+      cityIndexList: ['历史','热门'], // 右边导航栏列表
       maskShow: false, // 弹窗是否弹出
       maskMessage: '', // 弹窗展示的信息
       associationShow: false, // 是否开启联想展示框
@@ -56,7 +56,7 @@ export default {
       elementIndex: '', // navlist页点击的index
       arrHeight: [], // 高度数组
       flag: false, // 字母牌是否显示
-      flagText: '顶' // 字母牌显示的字
+      flagText: '历史' // 字母牌显示的字
     };
   },
   created () {
@@ -146,9 +146,13 @@ export default {
     maskClose () {
       this.maskShow = false
     },
+    // 查找City
+    findCity (city) {
+      return this.historyCityArr.indexOf(city) ? true : false
+    },
     // 根据定位确定加缓存
     local () {
-      if (this.choiceCityName !== this.nowCity) {
+      if (this.choiceCityName !== this.nowCity && this.findCity(this.choiceCityName)) {
         this.historyCityArr.unshift(this.choiceCityName)
       }
       this.historyCityArr = this.historyCityArr.slice(0, 2)
@@ -156,7 +160,7 @@ export default {
     },
     // 点击右边nav，向citylist组件传值
     toElement (text) {
-      if (text === '顶') {
+      if (text === '历史' || text === '热门') {
         this.$refs.suggest.scrollTo(0, 0, 200)
       }
       this.elementIndex = text
