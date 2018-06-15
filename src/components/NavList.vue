@@ -61,7 +61,6 @@ export default {
   position: absolute;
   top: 50%;
   right: 0;
-  background: #eee;
   margin-top: -230px;
   z-index: 95;
   box-sizing: border-box;
@@ -72,7 +71,7 @@ export default {
     text-align: center;
     line-height: 20px;
     font-size: 18px;
-    color: #fff;
+    color: #666;
     user-select: none;
   }
 
