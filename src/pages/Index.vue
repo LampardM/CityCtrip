@@ -160,10 +160,12 @@ export default {
         this.$refs.suggest.scrollTo(0, 0, 200)
       }
       this.elementIndex = text
+      this.flagText = text
     },
     // 滚动到相应的dom节点
     singleLetter (dom) {
       this.$refs.suggest.scrollToElement(dom, 200, false, false)
+      this.flag = true
     },
     // 根据滑动距离显示字母牌上的字
     distance (val) {

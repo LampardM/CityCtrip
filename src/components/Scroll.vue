@@ -50,12 +50,12 @@ export default {
       if (this.listenScroll) {
         // 滚动开始时触发
         this.scroll.on('scrollStart', () => {
-          this.$emit('scrollStore', true)
+          // this.$emit('scrollStore', true)
         })
         // pos为位置参数
         this.scroll.on('scroll', (pos) => {
-          this.$emit('distance', Math.abs(pos.y))
-          this.$emit('scrollStore', true)
+          // this.$emit('distance', Math.abs(pos.y))
+          // this.$emit('scrollStore', true)
         })
         // 滚动结束
         this.scroll.on('scrollEnd', () => {
