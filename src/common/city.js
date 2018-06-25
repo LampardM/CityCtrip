@@ -32,7 +32,6 @@ const allCity = {
         "name": "鞍山",
         "pinyin": "anshan",
         "acronym": "as",
-        "rank": "C",
         "firstChar": "A"
       }, 
       {
@@ -40,7 +39,6 @@ const allCity = {
         "name": "安庆",
         "pinyin": "anqing",
         "acronym": "anqing",
-        "rank": "D",
         "firstChar": "A"
       }, 
       {
@@ -48,7 +46,6 @@ const allCity = {
         "name": "安阳",
         "pinyin": "anyang",
         "acronym": "ay",
-        "rank": "D",
         "firstChar": "A"
       }
     ]
@@ -58,14 +55,12 @@ const allCity = {
     "name": "北京",
     "pinyin": "beijing",
     "acronym": "bj",
-    "rank": "S",
     "firstChar": "B"
   }, {
     "id": 140,
     "name": "包头",
     "pinyin": "baotou",
     "acronym": "bt",
-    "rank": "C",
     "firstChar": "B"
   }]
 ]
