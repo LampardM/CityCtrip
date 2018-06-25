@@ -223,7 +223,7 @@ export default {
       line-height: 50px;
       text-align: center;
       position: absolute;
-      top: 60px;
+      top: 50%;
       left: 50%;
       margin-left: -25px;
     }
